@@ -3,10 +3,71 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>The Buzz about Bees!</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <form>
+      <fieldset id="start">
+          <input type="button" value="Bee-gin!">
+      </fieldset>
+
+      <fieldset id="question1"> How many species of bees are currently known? <br>
+          <input type="radio" value="100" name="quest1" required>~100<br>
+          <input type="radio" value="600" name="quest1">~600<br>
+          <input type="radio" value="1600" name="quest1">~1600<br>
+          <input type="radio" value="16000" name="quest1">~16000<br>
+          <button class="next-question">
+              <span class="next">Next</span>
+          </button>
+      </fieldset>
+
+      <fieldset id="question2"> How many eyes do bees have? <br>
+          <input type="radio" value="2" name="quest2" required>2<br>
+          <input type="radio" value="3" name="quest2">3<br>
+          <input type="radio" value="4" name="quest2">4<br>
+          <input type="radio" value="5" name="quest2">5<br>
+          <button class="next-question">
+              <span class="next">Next</span>
+          </button>
+      </fieldset>
+
+      <fieldset id="question3"> What kind of bees make a honey-like substance from dead animal flesh? <br>
+          <input type="radio" value="Maggot_Bees" name="quest3" required>Maggot Bees<br>
+          <input type="radio" value="Vulture_Bees" name="quest3">Vulture Bees<br>
+          <input type="radio" value="Carnivorous_Bees" name="quest3">Carnivorous Bees<br>
+          <input type="radio" value="Blood_Bees" name="quest3">Blood Bees<br>
+          <button class="next-question">
+              <span class="next">Next</span>
+          </button>
+      </fieldset>
+
+      <fieldset id="question4"> Where was art found depecting domestication of bees roughly 4500 years ago? <br>
+          <input type="radio" value="Egypt" name="quest4" required>Egypt<br>
+          <input type="radio" value="China" name="quest4">China<br>
+          <input type="radio" value="Italy" name="quest4">Italy<br>
+          <input type="radio" value="Mexico" name="quest4">Mexico<br>
+          <button class="next-question">
+              <span class="next">Next</span>
+          </button>
+      </fieldset>
+
+      <fieldset id="question5"> How much of human food supply depends on pollination? <br>
+          <input type="radio" value="Third" name="quest5"required>A Third<br>
+          <input type="radio" value="Half" name="quest5">Half<br>
+          <input type="radio" value="Eighth" name="quest5">An Eighth<br>
+          <input type="radio" value="Tenth" name="quest5">A Tenth<br>
+          <button class="next-question">
+              <span class="next">Next</span>
+          </button>
+      </fieldset>
+
+      <fieldset id="the_end">
+          <input type="button" value="Try again?"><input type="submit" value="submit score"> <br>
+          <i>Note: Submitting your score will inform the author of this quiz with your score only, no other information will be sent.</i>
+      </fieldset>
+    </form>
+
     <script src="script.js"></script>
   </body>
 </html>
