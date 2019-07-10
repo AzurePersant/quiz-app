@@ -2,10 +2,15 @@
 
 /*
 Checklist:
-change score
-change question number
-
-
+change score *
+change question number *
+send user to start menu
+  reset score and question numbers to 0 *
+visually appealing start menu
+start the quiz
+check answer
+change question
+check final score
 */
 
 // current question numbers and score
@@ -27,8 +32,17 @@ function handleCheck() {
 
 }
 
+//send use to start menu
 function handleRestart() {
-
+  //change question number back to 0
+  questionNumber = 0;
+  $('.qNumber').text(questionNumber);
+  //change score back to 0
+  score = 0;
+  $('.score').text(score);
+  // test logs
+  //console.log("question " + questionNumber);
+  //console.log("score " + score);
 }
 
 // create function for changing question number
