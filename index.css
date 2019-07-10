@@ -18,3 +18,8 @@ header {
 /*.scoreBoard ul li {
     display: inline;
 } */
+
+.questionAnswersForm {
+    display: inline;
+    width: 50%;
+}
