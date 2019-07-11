@@ -24,7 +24,12 @@ let score = 0;
 
 // figure out html and css for the quiz
 function generateQuestion () {
+  if (questionNumber < STORE.length) {
 
+  } else {
+    $('.questionAnswersForm').css('display', 'none');
+    $('.resultsDisplay').css('display', 'block');
+  }
 
 function renderQuestion() {
   $('.questionAnswersForm').html(generateQuestion());
@@ -51,13 +56,18 @@ function handleStart() {
   $('.quizStart').on('click', '.js-start-button', function(event) {
     $('.quizStart').css('display', 'none');
     changeQuestionNumber();
-    $('questionAnswersForm').css('display', 'block');
+    $('.questionAnswersForm').css('display', 'block');
     renderQuestion();
   });
 }
 
 function handleNext() {
+  if (questionNumber < STORE.length) {
+    changeQuestionNumber();
+    renderQuestion();
+  } else {
 
+  }
 }
 
 function handleCheck() {
@@ -72,6 +82,10 @@ function handleRestart() {
   //change score back to 0
   score = 0;
   $('.score').text(score);
+  //hide divs
+  $('.quizStart').css('display', 'block');
+  $('.questionAnswersForm').css('display', 'none');
+  $('.resultsDisplay').css('display', 'none');
   // test logs
   //console.log("question " + questionNumber);
   //console.log("score " + score);

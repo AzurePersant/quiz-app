@@ -15,13 +15,15 @@ header {
     list-style: none;
 }
 
-/*.scoreBoard ul li {
-    display: inline;
-} */
-
 .questionAnswersForm {
-    display: inline;
+    display: none;
     text-align: center;
     width: 50%;
     
+}
+
+.resultsDisplay {
+    display: none;
+    text-align: center;
+    width: 50%;
 }
