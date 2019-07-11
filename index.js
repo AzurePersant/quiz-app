@@ -24,79 +24,26 @@ let score = 0;
 
 // figure out html and css for the quiz
 function generateQuestion () {
-  if (questionNumber < STORE.length) {
-    return `<div class="question-${questionNumber}">
-    <h2>${STORE[questionNumber].question}</h2>
-    <form>
-    <fieldset>
-    <label class="answerOption">
-    <input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" required>
-    <span>${STORE[questionNumber].answers[0]}</span>
-    </label>
-    <label class="answerOption">
-    <input type="radio" value="${STORE[questionNumber].answers[1]}" name="answer" required>
-    <span>${STORE[questionNumber].answers[1]}</span>
-    </label>
-    <label class="answerOption">
-    <input type="radio" value="${STORE[questionNumber].answers[2]}" name="answer" required>
-    <span>${STORE[questionNumber].answers[2]}</span>
-    </label>
-    <label class="answerOption">
-    <input type="radio" value="${STORE[questionNumber].answers[3]}" name="answer" required>
-    <span>${STORE[questionNumber].answers[3]}</span>
-    </label>
-    <button type="submit" class="submitButton">Submit</button>
-    </fieldset>
-    </form>
-    </div>`;
-} else {
-    renderResults();
-  }
-}
+
 
 function renderQuestion() {
   $('.questionAnswersForm').html(generateQuestion());
 }
 
-function userSelectAnswer () {
-  $('form').on('submit', function (event) {
-    event.preventDefault();
-    let selected = $('input:checked');
-    let answer = selected.val();
-    let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
-    if (answer === correctAnswer) {
-      selected.parent().addClass('correct');
-      ifAnswerIsCorrect();
-    } else {
-      selected.parent().addClass('wrong');
-      ifAnswerIsWrong();
-    }
-  });
-}
 
-function ifAnswerIsCorrect () {
-  userAnswerFeedbackCorrect();
+function ifAnswerCorrect () {
+  userCorrect();
   changeScore();
 }
 
-function ifAnswerIsWrong () {
-  userAnswerFeedbackWrong();
+function ifAnswerWrong () {
+  userWrong();
 }
 
 //user feedback for correct answer
-function userAnswerFeedbackCorrect () {
-  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
-  $('.questionAnswersForm').html(`<div class="correctFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
-}
+
 
 //user feedback for wrong answer
-function userAnswerFeedbackWrong () {
-  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
-  // let iconImage = `${STORE[questionNumber].icon}`;
-  $('.questionAnswersForm').html(`<div class="correctFeedback"><div class="icon"><img src="${STORE[questionNumber].icon}" alt="${STORE[questionNumber].alt}"/></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
-}
-
-
 
 
 // create function for button to start and change screens per question and answer
@@ -157,6 +104,7 @@ function init() {
   handleCheck();
   handleNext();
   handleRestart();
+  handleQuestion();
 }
 
 init();
